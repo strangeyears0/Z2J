@@ -231,3 +231,40 @@
 
 #4.4 Interact with user input
 
+# propmpt = "Hey what's up?"
+#
+# user_input = input(propmpt)
+#
+#
+# print(f"You said {user_input}")
+#
+# response = input("What should ia shout?")
+# shouted_response = response.upper()
+# print(f"Well y ou insist {shouted_response
+# }")
+
+#.1
+
+# user_input = input("Napisz coś")
+# print(user_input)
+
+#.2
+
+# user_input = input("Napisz coś:")
+# user_input_lower = user_input.lower()
+# print(user_input_lower)
+
+#3.
+
+# user_input = input("Napisz coś:")
+# user_input_lower = user_input.lower()
+# print(user_input_lower)
+# print(len(user_input))
+
+#4.5
+
+#pick apart your user_input
+
+# password  = input("Tell me your password")
+# back = password[0].upper()
+# print(f"The first letter your password is {back}")
