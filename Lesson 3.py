@@ -268,3 +268,110 @@
 # password  = input("Tell me your password")
 # back = password[0].upper()
 # print(f"The first letter your password is {back}")
+
+#4.6 Working with strings and numbers
+
+#using strings with arithmetic operators
+#
+# num = "2"
+# print(num + num)
+# print(num*3)
+#
+#Converting strings to numbers
+
+# num = input("Enter number to doubled :\n")
+# #num = int(num)
+# num = float(num)
+# doubled_num = num *2
+# print(doubled_num)
+
+#Converting numbers to strings
+
+# num_panckaces = 10
+# print("Im going to eat " + str(num_panckaces) + " panckackes." )
+
+#ex
+#1.
+# string = '1'
+# string = int(string)
+# print(string*2)
+#2.
+# string = '1'
+# string = float(string)
+# print(string*2)
+#3.
+# string = '1'
+# integer = 1
+#
+# print(str(integer))
+# print(int(string))
+#4.
+
+# num_1 = input("Enter first number\n")
+# num_2 = input("Enter second number\n")
+# multiple = float(num_1) * float(num_2)
+# print(multiple)
+
+#4.7 Streamline Your Prints
+# name="Andrzej"
+# heads=2
+# arms=4
+# print(f"{name} has {heads} head and {arms} arms.To chyba jakiś jebany potwór")
+#
+# n=3
+# m=4
+# print(f"{n} times {m} is {n*m}")
+#
+# print("{} has {} and {} arms".format(name,heads,arms))
+
+#EXERCIsES
+#1,2,3
+# weight=float(0.2)
+# animal = "newt"
+#
+# print(str(weight) + " kg is the weight of the " + animal)
+# print("{} kg is the weight of the {}".format(weight,animal))
+# print(f"{weight} kg is the weight of  the {animal}")
+
+#4.8
+
+# Find a String in a string
+# .find
+# phrase = "the surprise is in here somewhere"
+#
+# print(phrase.find("surprise"))
+# print(phrase.find("gówno"))
+# print("i put string in your string".find("string"))
+# print("my number is 555-555-555".find("5"))
+#
+# .replace
+#
+# my_story = "I'm telling you the truth: nothing but the truth"
+# print(my_story.replace("the truth","lies"))
+# my_story = my_story.replace("the truth","lies")
+# print(my_story)
+#
+# text="some of the stuff"
+# new_text = text.replace("some of","all")
+# new_text = new_text.replace("stuff","things")
+# print(new_text)
+
+#ex1,2
+# string = "AAA"
+# print(string.find("a"))
+#
+# string= "Somebody said something to Samantha".replace("s","z")
+# print(string)
+
+# ex3
+
+# user_input = input("Wpisz coś")
+# print(user_input.find("a"))
+
+
+#4.9
+
+# user_input = input("Enter some text :\n")
+# user_input = user_input.replace("a","4").replace("b","8").replace("e","3")\
+#             .replace("l","1").replace("o","0").replace("s","5").replace("t","7")
+# print(user_input)
