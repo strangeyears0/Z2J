@@ -493,3 +493,100 @@
 #
 # power = num1**num2
 # print(f"{num1} do potęgi {num2} równa się {power}")
+
+
+
+#5.5
+
+# maths functions andnumber methods
+
+# .round()
+# .abs()
+# .pow()
+
+# The round() function :
+# print(round(2.3))
+# print(round(2.7))
+# print(round(2.5))
+# print(round(3.5))
+# print(round(3.14159,3))
+# print(round(2.71809,2))
+
+
+# The abs() function:
+# print(abs(3))
+# print(abs(-5.0))
+
+# THE pow()function:
+# print(pow(2,3))
+# print(pow(2,3,2))
+
+
+# Check if a float is integral
+
+# .is_integer()
+
+# num = 2.5
+# print(num.is_integer())
+# num = 2.0
+# print(num.is_integer())
+
+#  exercises
+#1
+#
+# user_input = input("Enter a number: ")
+# user_input = float(user_input)
+# rounded= round(user_input,2)
+# print(f"{user_input} rounded to 2 decimal places is: {rounded}")
+
+#2
+
+# user_input = input("Enter a number: ")
+# user_input = float(user_input)
+# absolute = abs(user_input)
+# print(f"The absolute value of {user_input} is {absolute}")
+
+#3
+# num1 = float(input("Enter a number: \n"))
+# num2 = float(input("Enter a number: \n"))
+#
+# print(
+#     f"The difference between {num1} and {num2} is an integer?"
+#     f"{(num1 - num2).is_integer()}!")
+
+#5.6print number in style
+
+# n = 1.293
+# print(f"The value is {n}")
+# print(f"The value is {n:.2f}")
+# print(f"The value is {n:.1f}")
+# i = 1234567890
+# print(f"{i:,}")
+# u = 1234.56
+# print(f"{u:,.1f}")
+# print(f"{u:,.2f}")
+#
+# balance = 2000.00
+# spent = 256.35
+# remaining = balance - spent
+# print(f"After spendnig ${spent:.2f} i was left with ${remaining:,.2f}")
+
+# ratio = 0.9
+# print(f"Over {ratio:.1%}")
+# print(f"Over {ratio:.2%}")
+# print(f"Over {ratio:.3%}")
+
+# exercies
+# 1
+
+# result = 3** .125
+# print(f"{result:.3f}")
+
+# 2
+# number = 150000
+# print(f"{number:,.2f}")
+
+#3
+
+# result = 2 / 10
+# print(f"{result:.0%}")
