@@ -375,3 +375,121 @@
 # user_input = user_input.replace("a","4").replace("b","8").replace("e","3")\
 #             .replace("l","1").replace("o","0").replace("s","5").replace("t","7")
 # print(user_input)
+
+
+#5 NUMBERS AND MATH
+
+#5.1 Integers and Floating-points NUMBERS
+
+#Integers
+
+# print(type(1))
+#
+# num = 25 #intiger literal
+#
+# print(int("25"))
+# print(1_000_000)
+
+#Floating Points numbers
+
+# print(type(1.0))
+# print(float("1.25"))
+# print(1000000.0)
+# print(1_000_000.0)
+# print(1e6)
+# print(20000000000000000000.0)
+# print(1e-4)
+# print(2e400)
+# n=2e400
+# print(n)
+# print(type(n))
+# print(-2e400)
+#exercises
+
+# #1
+# num1 = 25000000
+# num2 = 25_000_000
+# print(num1)
+# print(num2)
+
+#2
+
+# num1 = 175e3
+# print(num1)
+
+#3
+
+# print(2e307) #maks
+
+#5.2 ARITHMETIC OPERATORS AND EXPRESSIONS
+
+
+#addition
+#
+# print(1 + 2)
+# print(1.0 + 2)
+#
+# #substration
+#
+# print(1 - 1)
+# print(5.0 - 3)
+# print(1 - (-3))
+#
+# #multiplication
+#
+# print(3 * 3)
+# print(2 * 8.0)
+
+#division
+
+# print(9 / 3)
+# print(5.0 / 2)
+# print(
+#     int(9 / 3)
+# )
+# print(
+#     int(5.0 / 2)
+# )
+
+#Intiger division
+
+# / intiger division
+# // floor division
+# print(
+#     9//3
+# )
+# print(5.0//2)
+# print(-3//2)
+
+#EXPONENTS
+# print(2**2)
+# print(2**3)
+# print(2**4)
+# print(3**1.5)
+# print(3**-1)
+# print(2**-2)
+
+#The modulus operator
+
+# print(5 % 3)
+# print(16 % 8)
+# print(5 % -3)
+# print(-5 % -3)
+
+#artithmetic expresions
+
+# print(2 * 3 -1)
+# print(4 / 2 + 2**3)
+# print(-1 +(-3 * 2 + 4))
+
+
+#5.3
+
+# num1 = input("Podaj pierwszą liczbę")
+# num2 = input("podaj drugą liczbę")
+#
+# num1 = float(num1)
+# num2 = float(num2)
+#
+# power = num1**num2
+# print(f"{num1} do potęgi {num2} równa się {power}")
