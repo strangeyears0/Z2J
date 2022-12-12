@@ -590,3 +590,34 @@
 
 # result = 2 / 10
 # print(f"{result:.0%}")
+
+#5.7
+
+#Complex NUMBERS
+
+# n = 1 + 2j
+# print(n)
+#
+# print(n.real)
+# print(n.imag)
+# print(n.conjugate())
+#
+
+
+# a = 1 + 2j
+# b = 3 - 4j
+#
+# print(a+b)
+# print(a-b)
+# print(a*b)
+# print(a**b)
+# print(a/b)
+# #
+# x = 42
+# y = 3.14
+# print(x.real)
+# print(y.real)
+# print(x.imag)
+# print(y.imag)
+# print(x.conjugate())
+# print(y.conjugate())
