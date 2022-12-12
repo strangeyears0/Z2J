@@ -42,21 +42,31 @@
 
 #6.3 CONVERT TEMPERATURES
 
-celcius = input("Enter temperature in degrees C:")
-farenheit = input("Enter temperature in degrees F:")
-celcius = float(celcius)
-farenheit = float(farenheit)
+# celcius = input("Enter temperature in degrees C:")
+# farenheit = input("Enter temperature in degrees F:")
+# celcius = float(celcius)
+# farenheit = float(farenheit)
+#
+#
+# def convert_cel_to_far(celcius):
+#     """ CONVERT CELCIUS TO FARENHEIT"""
+#     F = celcius * 9/5 + 32
+#     return F
+#
+# def convert_far_to_cel(farenheit):
+#     """Convert fareheit to celcius"""
+#     C = (farenheit - 32) * 5/9
+#     return C
+#
+# print(f"{farenheit} degrees F is {convert_far_to_cel(farenheit):.2f} degrees C")
+# print(f"{celcius} degrees C is {convert_cel_to_far(celcius):.2f} degrees F")
 
 
-def convert_cel_to_far(celcius):
-    """ CONVERT CELCIUS TO FARENHEIT"""
-    F = celcius * 9/5 + 32
-    return F
+#6.4  Run in circles
 
-def convert_far_to_cel(farenheit):
-    """Convert fareheit to celcius"""
-    C = (farenheit - 32) * 5/9
-    return C
+#while loop
+# n=1
+# while n<=5:
+#     print(n)
+#     n = n+1
 
-print(f"{farenheit} degrees F is {convert_far_to_cel(farenheit):.2f} degrees C")
-print(f"{celcius} degrees C is {convert_cel_to_far(celcius):.2f} degrees F")
