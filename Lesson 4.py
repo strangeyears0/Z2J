@@ -70,3 +70,58 @@
 #     print(n)
 #     n = n+1
 
+# for loop
+
+# for letter in "python":
+#     print(letter)
+
+# SAME IN WHILE
+
+# word = "Python"
+# index= 0
+# while index<len(word):
+#     print(word[index])
+#     index = index + 1
+
+
+# for n in range(3):
+#     print("Python")
+
+# for n in range(10,20):
+#     print(n*n)
+
+# amount = float(input("Enter an amount: "))
+#
+# for num_people in range(2, 6):
+#     print(f"{num_people} people: ${amount/num_people:,.2f} each")
+
+#NESTED LOOPS
+
+# for n in range(1, 4):
+#     for j in range(4, 7):
+#         print(f"n = {n} and j = {j}")
+
+#exercises1
+#
+# for n in range(2,11):
+#     print(n)
+
+# exercises2
+
+# index=2
+# while index<=11:
+#     print(index)
+#     index += 1
+
+#3.
+
+# def doubles(num):
+#     """Return result of multiplaying an input number by 2"""
+#     return num * 2
+# my_num = 2
+# for i in range(0, 3):
+#     my_num = doubles(my_num)
+#     print(my_num)
+
+#6.5    TRACK YOUR INVESTMENTS
+
