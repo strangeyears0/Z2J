@@ -124,4 +124,19 @@
 #     print(my_num)
 
 #6.5    TRACK YOUR INVESTMENTS
+#
+# def invest(amount, rate, years):
+#     """Display year on year growth on a iniitial investment"""
+#     for year in range(1, years + 1):
+#         amount = amount * (1 + rate)
+#         print(f"Year {year}: $ {amount:,.2f}")
+#
+#
+# amount = float(input("Enter amount: \n"))
+# rate = float(input("Enter rate: \n"))
+# years = int(input("Enter years:\n"))
+#
+#
+# invest(amount,rate,years)
 
+#6.6 Undesrstqand scope in python\
