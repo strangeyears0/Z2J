@@ -140,3 +140,32 @@
 # invest(amount,rate,years)
 
 #6.6 Undesrstqand scope in python\
+
+
+# x= "Hello world"
+#
+# def func():
+#     x = 2
+#     print(f"Inside 'func' x has the value {x}")
+# func()
+# print(f"Outside 'func' x has the value {x}")
+# print("Hello world is gloal scope, '2' is local scope")
+
+# Scope resolution
+
+# x = 5
+# def outer_func():
+#     y = 3
+#     def inner_func():
+#         z = x + y
+#         return z
+#     return inner_func
+
+
+# The LEGB rule
+
+# Local
+# Enclosing
+# Global
+# Built-In
+
