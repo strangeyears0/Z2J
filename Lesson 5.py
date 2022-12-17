@@ -267,12 +267,12 @@
 #         print("try again")
 
 # ex2
-
-user_input_string=input("Input string.")
-try:
-    user_input_int=int(input("Input int."))
-    print(user_input_string[user_input_int])
-except ValueError:
-    print("Invalid number")
-except IndexError:
-    print("Index is out of bonds")
+#
+# user_input_string=input("Input string.")
+# try:
+#     user_input_int=int(input("Input int."))
+#     print(user_input_string[user_input_int])
+# except ValueError:
+#     print("Invalid number")
+# except IndexError:
+#     print("Index is out of bonds")
