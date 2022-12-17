@@ -173,8 +173,106 @@
 
 #8.4
 # DISPLAY ALL THE FACTORS OF A NUMBER CHOSEN BY THE USER:
+#
+# num = int(input("Enter a positive intiger:\n"))
+# for divisor in range(1, num + 1):
+#     if num % divisor == 0:
+#         print(f"{divisor} is a factor of {num}")
 
-num = int(input("Enter a positive intiger:\n"))
-for divisor in range(1, num + 1):
-    if num % divisor == 0:
-        print(f"{divisor} is a factor of {num}")
+#8.5
+# Break out of the pattern
+
+# sum_of_evens = 0
+# for n in range(101):
+#     if n % 2 == 0:
+#         sum_of_evens = sum_of_evens + n
+# print(sum_of_evens)
+
+# break
+# for n in range(4):
+#     if n == 2:
+#         break
+#     print(n)
+# print(f"Finished with n = {n}")
+
+#continue
+
+# for i in range(4):
+#     if i == 2:
+#         continue
+#     print(i)
+# print(f"Finished with i = {i}")
+
+# for...else loops
+
+# phrase = " it marks the spot"
+#
+# for character in phrase:
+#     if character == "X":
+#         break
+# else:
+#     print("There was no X")
+
+
+# for n in range(3):
+#     password = input("Password:\n")
+#     if password == "I<3Fuck":
+#         break
+#     print("Password is incorrect")
+# else:
+#     print("Suspicious activity. The authorities have been alerted")
+
+# exercises1
+# while True:
+#     user_input = input("Type 'q or 'Q' to quit:\n ")
+#     if user_input.upper() == "Q":
+#         break
+
+# exercises2
+
+# for i in range(1, 51):
+#     if i % 3 == 0:
+#         continue
+#     print(i)
+
+# 8.6 Recover from errors
+
+# try and except keywords
+
+
+# try:
+#     number = int(input("Entre an intiger:"))
+# except ValueError:
+#     print("That was not a intiger")
+#
+
+
+# def divide(num1, num2):
+#     try:
+#         print(num1/num2)
+#     except TypeError:
+#         print("Both arguments must be numbers")
+#     except ZeroDivisionError:
+#         print("num 2 must not be 0")
+# divide(1,2)
+
+
+# ex1
+# while True:
+#     try:
+#         user_input=int(input("Input intiger"))
+#         print(f"Your intiger :\n{user_input}")
+#     except ValueError:
+#         print("that was not a intiger")
+#         print("try again")
+
+# ex2
+
+user_input_string=input("Input string.")
+try:
+    user_input_int=int(input("Input int."))
+    print(user_input_string[user_input_int])
+except ValueError:
+    print("Invalid number")
+except IndexError:
+    print("Index is out of bonds")
