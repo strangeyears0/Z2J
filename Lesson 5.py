@@ -162,3 +162,10 @@
 # elif word_length < 5:
 #     print("Your input is less than 5 characters long")
 
+number = 3
+user_input=int(input("I'm Thinking of a number between 1 and 10. Guess wich one"))
+
+if user_input == number:
+    print("You win")
+else:
+    print("You lose")
