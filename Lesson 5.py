@@ -162,10 +162,19 @@
 # elif word_length < 5:
 #     print("Your input is less than 5 characters long")
 
-number = 3
-user_input=int(input("I'm Thinking of a number between 1 and 10. Guess wich one"))
+#ex2
+# number = 3
+# user_input=int(input("I'm Thinking of a number between 1 and 10. Guess wich one"))
+#
+# if user_input == number:
+#     print("You win")
+# else:
+#     print("You lose")
 
-if user_input == number:
-    print("You win")
-else:
-    print("You lose")
+#8.4
+# DISPLAY ALL THE FACTORS OF A NUMBER CHOSEN BY THE USER:
+
+num = int(input("Enter a positive intiger:\n"))
+for divisor in range(1, num + 1):
+    if num % divisor == 0:
+        print(f"{divisor} is a factor of {num}")
