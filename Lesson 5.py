@@ -276,3 +276,136 @@
 #     print("Invalid number")
 # except IndexError:
 #     print("Index is out of bonds")
+
+#8.7 Simulate events and calculate probabilities
+
+# import random
+#
+# randint=(random.randint(1,3))
+# print(randint)
+
+#FAIR COINS
+
+# import random
+#
+# def coin_flip():
+#     """Random return heads or tails"""
+#     if random.randint(0,1) == 0:
+#         return "heads"
+#     else:
+#         return "tails"
+#
+# heads_tally = 0
+# tails_tally = 0
+#
+# for trial in range(1_000_000):
+#     if coin_flip() == "heads":
+#         heads_tally = heads_tally +1
+#     else:
+#         tails_tally = tails_tally +1
+# ratio = heads_tally/tails_tally
+# print(f"Ratio is: {ratio:.3f}")
+#
+#
+
+#UNFAIR Coins
+
+# import random
+#
+# def unfair_coin_flip(probality_of_tails):
+#     """Unfair return random"""
+#     if random.random() < probality_of_tails:
+#         return "tails"
+#     else:
+#         return "heads"
+# heads_tally = 0
+# tails_tally = 0
+#
+# for trial in range(10_000):
+#     if unfair_coin_flip(.9) == "heads":
+#         heads_tally = heads_tally + 1
+#     else:
+#         tails_tally = tails_tally + 1
+# ratio = heads_tally / tails_tally
+# print(f"The ratio of heads to tails is {ratio:.3f}")
+
+
+#exercises1
+# import random
+#
+# def roll():
+#     """SIMULATE ROLLIG DIE"""
+#     dieroll=random.randint(1,6)
+#     print(f"You throw {dieroll}")
+# roll()
+
+#exercises2
+#
+# from random import randint
+# def roll():
+#     return randint(1,6)
+# num_rolls = 100000
+# total = 0
+# for trial in range(num_rolls):
+#     total = total + roll()
+# avg_roll = total/ num_rolls
+# print(f"The average result of {num_rolls} rolls is {avg_roll}")
+
+#8.8 Challange simulate a coin toss experiments
+# import random
+#
+# def single_trial():
+#     """Simulate repeatedly a coing until both heads and tails are seen"""
+#
+#     flip_result = random.randint(0,1)
+#     flip_count = 1
+#
+#     while flip_result == random.randint(0,1):
+#         flip_count = flip_count + 1
+#     flip_count = flip_count + 1
+#     return flip_count
+
+# def flip_trial_avg(num_trials):
+#     """Calculate the avarage number of flips per trial over num+trials total trials."""
+#     total = 0
+#     for trial in range(num_trials):
+#         total = total + single_trial()
+#     return total / num_trials
+#
+# print(f"The avarege number of coin flips was {flip_trial_avg(10_000)}")
+
+# 8.9
+#
+# from random import random
+#
+# num_times_A_wins = 0
+# num_times_B_wins = 0
+#
+# num_trials = 10_000
+# for trial in range(0, num_trials):
+#     votes_for_A = 0
+#     votes_for_B = 0
+#
+#     if random()<0.87:
+#         votes_for_A = votes_for_A + 1
+#     else:
+#         votes_for_B = votes_for_B + 1
+#
+#     if random()<0.65:
+#         votes_for_A = votes_for_A + 1
+#     else:
+#         votes_for_B = votes_for_B + 1
+#     if random()<0.17:
+#         votes_for_A = votes_for_A + 1
+#     else:
+#         votes_for_B = votes_for_B + 1
+#
+#     if votes_for_A > votes_for_B:
+#         num_times_A_wins = num_times_A_wins + 1
+#     else:
+#         num_times_B_wins = num_times_B_wins + 1
+#
+# print(f"Probability A wins: {num_times_A_wins/num_trials}")
+# print(f"Probability B wins: {num_times_B_wins/num_trials}")
+
+# 9 Tuples, LIsts and Dictionaries
