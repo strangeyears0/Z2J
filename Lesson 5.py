@@ -409,3 +409,51 @@
 # print(f"Probability B wins: {num_times_B_wins/num_trials}")
 
 # 9 Tuples, LIsts and Dictionaries
+#
+# my_first_tuple = (1, 2, 3)
+# print(type(my_first_tuple))
+# empty_tuple=()
+# print(empty_tuple)
+# #one element tuple"
+# x=(1, )
+# print(type(x))
+# #built in tuple()
+# print(tuple("Python"))
+# numbers=(1, 2, 3)
+# print(len(numbers))
+#
+# values= (1, 3, 5, 7, 9)
+# print(values[2])
+# print(values[2:4])
+#
+#
+# # values[0]=2 type error
+#
+# # tuples are iterable
+#
+# vowels = ('u', 'i', 'o', 'a', 'q')
+# for vowel in vowels:
+#     print(vowel.upper())
+#
+# #tuplep packing and unpacking
+# coordinats = 4.21, 9.23
+# x,y = coordinats
+# print(x)
+# print(y)
+#
+# name, age, ocupation = "David", 34, "programmer"
+# print(name, age, ocupation)
+#
+# # a, b, c, d = 1, 2,3 VALUE ERROR
+#
+# vowels = ('u', 'i', 'o', 'a', 'q')
+# print('o' in vowels)
+# print('x' in vowels)
+#
+# # Returning multiple values from a function
+#
+# def adder_substractot(num1,num2):
+#     return (num1+num2, num1-num2)
+# print(adder_substractot(3,2))
+
+# exercises1
