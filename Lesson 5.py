@@ -457,3 +457,23 @@
 # print(adder_substractot(3,2))
 
 # exercises1
+
+# cardinal_numbers = ("first", "second", "third")
+# print(cardinal_numbers)
+# # ex2
+# print(cardinal_numbers[1])
+# # ex3
+# position1, position2, position3 = cardinal_numbers
+# print(f"{position1}\n{position2}\n{position3}")
+# #ex 4
+# my_name = input(("My name"))
+# # ex5
+# tuple_name = (tuple(my_name))
+# if 'x' in tuple_name:
+#     print('x is in your name')
+# else:
+#     print("'x is not in your name")
+# # ex6
+# print(tuple_name[1:])
+
+#9.2  Lists are mutable sequences
