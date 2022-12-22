@@ -477,3 +477,82 @@
 # print(tuple_name[1:])
 
 #9.2  Lists are mutable sequences
+#
+# colors= ["red", "yellow", "green", "blue"]
+# print(type(colors))
+# print(colors)
+# built_in_list=list((1,2,3))
+# print(built_in_list)
+# built_in_list2=list('Python')
+# print(built_in_list2)
+# groceries = "eggs, milk, cheese"
+# grocery_list = groceries.split(",")
+# print(grocery_list)
+# split_list="a;b;c"
+# split_list=split_list.split(";")
+# print(split_list)
+# split_spaces= "the quick brown cow"
+# split_spaces= split_spaces.split(" ")
+# print(split_spaces)
+# split_characters = "abbaabba"
+# split_characters = split_characters.split("ba")
+# print(split_characters)
+
+
+# Basic list operators
+#
+# numbers=[1,2,3,4]
+# print(numbers[1])
+# print(numbers[1:3])
+# check = "bob" in numbers
+# print(check)
+# for number in numbers:
+#     if number % 2 == 0:
+#         print(number)
+
+# Changing elements in list
+#
+# colors  = ["red", "yellow", "green", "blue"]
+# colors[0] = "burgundy"
+# print(colors)
+#
+# colors[1:3] = ["orange", "magenta"]
+# print(colors)
+#
+# colors  = ["red", "yellow", "green", "blue"]
+# colors[1:3]=["orange","magenta","aqua"]
+# print(colors)
+#
+# colors[1:4] = ["yellow","green"]
+# print(colors)
+
+# list methods for adding and removing elements
+
+# list.insert()
+#
+# colors=["red","yellow","green","blue"]
+# colors.insert(1,"orange")
+# print(colors)
+# colors.insert(10,"violet")
+# print(colors)
+# colors.insert(-1,"indigo")
+# print(colors)
+#
+# # list.pop()
+#
+# color= colors.pop(3)
+# print(color)
+# color=colors.pop(-1)
+# print(color)
+# color=colors.pop()
+# print(color)
+#
+# #list.append()
+#
+# color=colors.append("indigo")
+# print(colors)
+#
+# # list.extend()
+#
+# colors.extend(["violet","ultraviolet"])
+# print(colors)
