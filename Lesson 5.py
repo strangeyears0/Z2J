@@ -599,3 +599,70 @@
 #
 # lenghts=[len(item) for item in list_breakfast]
 # print(lenghts)
+
+
+# 9.3 Nesting Copying and sorting types and lists
+
+# nesting list and tuples
+
+# two_by_two = [[1,2], [3,4]]
+# len=len(two_by_two)
+# print(len)
+# print(two_by_two[0])
+# print(two_by_two[1])
+# print(two_by_two[1][0])
+
+
+# copying a list
+
+# animals = ["lion","tiger"]
+# large_cats = animals
+# large_cats.append("Tigger")
+# print(animals)
+
+# animals = ["lion","tiger"]
+# large_cats = animals[:]
+# large_cats.append("leopard")
+# print(large_cats)
+# print(animals)
+#
+# import copy
+#
+# matrix1 = [[1,2], [3,4]]
+# matrix2 = matrix1[:]
+# matrix2[0] = [5,6]
+# # print(matrix2)
+# # print(matrix1)
+# matrix2[1][0] = 1
+# # print(matrix2)
+# # print(matrix1)
+#
+# # deepcopy
+#
+# matrix3 = copy.deepcopy(matrix1)
+# matrix3[1][0] = 3
+# print(matrix3)
+# print(matrix1)
+
+# sorting list
+
+# .sort()
+
+# colors = ["red", "yellow", "green", "blue"]
+# colors.sort()
+# print(colors)
+# numbers = [1,10,5,4]
+# numbers.sort()
+# print(numbers)
+# colors = ["red", "yellow", "green", "blue"]
+# colors.sort(key=len)
+# print(colors)
+
+# get second element
+
+#
+# def get_second_element(item):
+#     return item[1]
+# items = [(4,1),(1,2),(-9,0)]
+# items.sort(key=get_second_element)
+# # print(items)
