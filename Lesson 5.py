@@ -556,3 +556,46 @@
 #
 # colors.extend(["violet","ultraviolet"])
 # print(colors)
+
+# list of numbers
+# nums = [1,2,3,4,5]
+# total = 0
+# for number in nums:
+#     total = total + number
+# print(total)
+#
+# sum = sum(nums)
+# print(sum)
+# min = min(nums)
+# print(min)
+# max = max(nums)
+# print(max)
+
+# list comprehensions
+
+# numbers = (1, 2, 3, 4, 5)
+# squares = [num**2 for num in numbers]
+# print(squares)
+#
+# str_numbers = ["1.5", "2.3", "5.25"]
+# float_numbers = [float(value) for value in str_numbers]
+# print(float_numbers)
+
+
+# exercises1:5
+# food = ["rice", "beans"]
+# print(food)
+# food.append("broccoli")
+# print(food)
+# food.extend(["bread","pizza"])
+# print(food)
+# print(food[:2])
+# print(food[-1])
+# exercises6:8
+# breakfast = "eggs, fruit, orange juice"
+# list_breakfast= breakfast.split(",")
+# print(list_breakfast)
+# print(len(list_breakfast))
+#
+# lenghts=[len(item) for item in list_breakfast]
+# print(lenghts)
