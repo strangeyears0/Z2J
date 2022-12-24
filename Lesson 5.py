@@ -666,3 +666,67 @@
 # items = [(4,1),(1,2),(-9,0)]
 # items.sort(key=get_second_element)
 # # print(items)
+
+# exercises1,2
+
+# data = ((1, 2), (3, 4))
+# index=1
+# for row in data:
+#
+#     print(f"Row {index} sum: {sum(row)}")
+#     index +=1
+
+#ex3,4,5
+# variable_numbers = [4, 3, 2, 1]
+# # copy_variable_numbers=variable_numbers[:]
+# # print(copy_variable_numbers)
+# print(variable_numbers)
+# variable_numbers.sort()
+# print(variable_numbers)
+
+#9.4Challange: list of lists
+
+#
+# def enrollment_stats(list_of_universities):
+#     total_students = []
+#     total_tution = []
+#
+#     for university in list_of_universities:
+#         total_students.append(university[1])
+#         total_tution.append(university[2])
+#
+#     return total_students, total_tution
+#
+# def mean(values):
+#     return sum(values) / len(values)
+#
+# def median(values):
+#     values.sort()
+#     if len(values) % 2 == 1:
+#         center_index = int(len(values) / 2)
+#         return values[center_index]
+#     else:
+#         left_center_index = (len(values) - 1) // 2
+#         right_center_index = (len(values) + 1) // 2
+#         return mean([values[left_center_index], values[right_center_index]])
+#
+# universities = [
+#     ['California Institute of Technology', 2175, 37704],
+#     ['Harvard', 19627, 39849],
+#     ['Massachusetts Institute of Technology', 10566, 40732],
+#     ['Princeton', 7802, 37000],
+#     ['Rice', 5879, 35551],
+#     ['Stanford', 19535, 40569],
+#     ['Yale', 11701, 40500]
+# ]
+# totals = enrollment_stats(universities)
+#
+# print("\n")
+# print("****" * 6)
+# print(f"Total students: {sum(totals[0]):}")
+# print(f"Total tuitions :  $ {sum(totals[1]):}")
+# print(f"\n Students mean: {mean(totals[0]):,.2f} ")
+# print(f"Student median: {median(totals[0]):}")
+# print(f"\n Tution mean: $ {mean(totals[1]):,.2f} ")
+# print(f"Tutin median:  $ {median(totals[1]):}")
+#
