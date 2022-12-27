@@ -1200,3 +1200,80 @@
 # print(poem)
 
 #9.6 Store relationships in dictionaries
+# creating dictionaries:
+
+# capitals = {
+#     "California":"Sacramento",
+#     "New York":"Albamy",
+#     "Texas":"Austin"
+# }
+# print(capitals)
+#
+#
+# # built_in dict()
+#
+# key_value_pairs = (
+#     ("california","sacramento"),
+# )
+# capitals = dict(key_value_pairs)
+# print(capitals)
+#
+# # empty dict
+# empty={}
+# print(empty)
+# print(dict())
+#
+# # accesing dictionary values
+# capitals = {
+#     "California":"Sacramento",
+#     "New York":"Albamy",
+#     "Texas":"Austin"
+# }
+#
+# print(capitals["Texas"])
+#
+# # adding and removing values in a dictionary
+#
+# capitals["Colorado"]="Denver"
+# print(capitals)
+# capitals["Texas"]="Houston"
+# print(capitals)
+# del capitals["Texas"]
+# print(capitals)
+# #
+# # checking the existance of dictionary keys
+#
+# print("Arizona" in capitals)
+# print("California" in capitals)
+#
+# if "Arizona" in capitals:
+#     print(f"The capitol of arizona is {capitals['Arizona']}")
+#
+# # iteratimg over dictionaries
+#
+# for key in capitals:
+#     print(key)
+#
+# for state in capitals:
+#     print(f"The capital of {state} is {capitals[state]}")
+#
+# # capital.items()
+# for state, capital in capitals.items():
+#     print(f"The capitol of {state} is {capital}")
+# capitals[50]="Honolulu"
+# print(capitals)
+
+# # Nested dictionaries
+#
+# states = {
+#     "California":{
+#         "capital":"Sacramento",
+#         "flower":"California Poppy"
+#     },
+#     "New York":{
+#         "capital":"Albamy",
+#         "flower":"rose"
+#     },
+# }
+# print(states["California"])
+# print(states["California"]["flower"])
