@@ -1317,70 +1317,100 @@
 # print(captains)
 
 #9.7
-
-import random
-
-capitals_dict = {
-    "Alabama": "Montgomery",
-    "Alaska": "Juneau",
-    "Arizona": "Phoenix",
-    "Arkansas": "Little Rock",
-    "California": "Sacramento",
-    "Colorado": "Denver",
-    "Connecticut": "Hartford",
-    "Delaware": "Dover",
-    "Florida": "Tallahassee",
-    "Georgia": "Atlanta",
-    "Hawaii": "Honolulu",
-    "Idaho": "Boise",
-    "Illinois": "Springfield",
-    "Indiana": "Indianapolis",
-    "Iowa": "Des Moines",
-    "Kansas": "Topeka",
-    "Kentucky": "Frankfort",
-    "Louisiana": "Baton Rouge",
-    "Maine": "Augusta",
-    "Maryland": "Annapolis",
-    "Massachusetts": "Boston",
-    "Michigan": "Lansing",
-    "Minnesota": "Saint Paul",
-    "Mississippi": "Jackson",
-    "Missouri": "Jefferson City",
-    "Montana": "Helena",
-    "Nebraska": "Lincoln",
-    "Nevada": "Carson City",
-    "New Hampshire": "Concord",
-    "New Jersey": "Trenton",
-    "New Mexico": "Santa Fe",
-    "New York": "Albany",
-    "North Carolina": "Raleigh",
-    "North Dakota": "Bismarck",
-    "Ohio": "Columbus",
-    "Oklahoma": "Oklahoma City",
-    "Oregon": "Salem",
-    "Pennsylvania": "Harrisburg",
-    "Rhode Island": "Providence",
-    "South Carolina": "Columbia",
-    "South Dakota": "Pierre",
-    "Tennessee": "Nashville",
-    "Texas": "Austin",
-    "Utah": "Salt Lake City",
-    "Vermont": "Montpelier",
-    "Virginia": "Richmond",
-    "Washington": "Olympia",
-    "West Virginia": "Charleston",
-    "Wisconsin": "Madison",
-    "Wyoming": "Cheyenne",
-}
-
-state, capital = random.choice(list(capitals_dict.items()))
-
-while True:
-    guess = input(f"What is the capital of {state}?").lower()
-    if guess == "exit":
-        print(f"The capital of {state} is {capital}.")
-        print("Goodbye")
-        break
-    elif guess == capital.lower():
-        print("Correct ")
-        break
+#
+# import random
+#
+# capitals_dict = {
+#     "Alabama": "Montgomery",
+#     "Alaska": "Juneau",
+#     "Arizona": "Phoenix",
+#     "Arkansas": "Little Rock",
+#     "California": "Sacramento",
+#     "Colorado": "Denver",
+#     "Connecticut": "Hartford",
+#     "Delaware": "Dover",
+#     "Florida": "Tallahassee",
+#     "Georgia": "Atlanta",
+#     "Hawaii": "Honolulu",
+#     "Idaho": "Boise",
+#     "Illinois": "Springfield",
+#     "Indiana": "Indianapolis",
+#     "Iowa": "Des Moines",
+#     "Kansas": "Topeka",
+#     "Kentucky": "Frankfort",
+#     "Louisiana": "Baton Rouge",
+#     "Maine": "Augusta",
+#     "Maryland": "Annapolis",
+#     "Massachusetts": "Boston",
+#     "Michigan": "Lansing",
+#     "Minnesota": "Saint Paul",
+#     "Mississippi": "Jackson",
+#     "Missouri": "Jefferson City",
+#     "Montana": "Helena",
+#     "Nebraska": "Lincoln",
+#     "Nevada": "Carson City",
+#     "New Hampshire": "Concord",
+#     "New Jersey": "Trenton",
+#     "New Mexico": "Santa Fe",
+#     "New York": "Albany",
+#     "North Carolina": "Raleigh",
+#     "North Dakota": "Bismarck",
+#     "Ohio": "Columbus",
+#     "Oklahoma": "Oklahoma City",
+#     "Oregon": "Salem",
+#     "Pennsylvania": "Harrisburg",
+#     "Rhode Island": "Providence",
+#     "South Carolina": "Columbia",
+#     "South Dakota": "Pierre",
+#     "Tennessee": "Nashville",
+#     "Texas": "Austin",
+#     "Utah": "Salt Lake City",
+#     "Vermont": "Montpelier",
+#     "Virginia": "Richmond",
+#     "Washington": "Olympia",
+#     "West Virginia": "Charleston",
+#     "Wisconsin": "Madison",
+#     "Wyoming": "Cheyenne",
+# }
+#
+# state, capital = random.choice(list(capitals_dict.items()))
+#
+# while True:
+#     guess = input(f"What is the capital of {state}?").lower()
+#     if guess == "exit":
+#         print(f"The capital of {state} is {capital}.")
+#         print("Goodbye")
+#         break
+#     elif guess == capital.lower():
+#         print("Correct ")
+#         break
+# 9.9
+# def get_cats_with_hats(array_of_cats):
+#     cats_with_hats_on = []
+#     # We want to walk around the circle 100 times
+#     for num in range(1, 100 + 1):
+#         # Each time we walk around, we visit 100 cats
+#         for cat in range(1, 100 + 1):
+#             # Determine whether to visit the cat
+#             # Use modulo operator to visit every 2nd, 3rd, 4th,... etc.
+#             if cat % num == 0:
+#                 # Remove or add hat depending on
+#                 # whether the cat already has one
+#                 if array_of_cats[cat] is True:
+#                     array_of_cats[cat] = False
+#                 else:
+#                     array_of_cats[cat] = True
+#
+#     # Add all number of each cat with a hat to list
+#     for cat in range(1, 100 + 1):
+#         if array_of_cats[cat] is True:
+#             cats_with_hats_on.append(cat)
+#
+#     # Return the resulting list
+#     return cats_with_hats_on
+#
+#
+# # Cats contains whether each cat already has a hat on,
+# # by default all are set to false since none have been visited
+# cats = [False] * (100 + 1)
+# print(get_cats_with_hats(cats))
