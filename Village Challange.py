@@ -79,8 +79,15 @@ class Building:
         return f"This building is {self.name}, and this is {self.type}"
 
 class Whorehouse(Building):
+    def __init__(self, name, type, whore):
+        super().__init__(name,type)
+        self.whore = whore
+
+
     def check_who_is_in_building():
-        print( f"Door is open, you see whores and {santa.name}" )
+
+
+        print( f"Door is open, you see  {santa.name} with {whorehouse.whore}" )
 
 
 
@@ -101,6 +108,6 @@ print(elfscientist.crafting())
 print(santa.singing())
 
 
-whorehouse = Whorehouse("Candy Drop","Whorehouse")
+whorehouse = Whorehouse("Candy Drop","Whorehouse","Lizzy")
 print(whorehouse)
 Whorehouse.check_who_is_in_building()
