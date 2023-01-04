@@ -11,6 +11,9 @@ class Village:
         return f"Village name: {self.name}" \
                f"\nPopulation : {self.population}"
 
+    def add_population(self):
+        self.population += 1
+
 #Class Townsfolk
 class TownsFolk(Village):
 
@@ -21,6 +24,7 @@ class TownsFolk(Village):
         self.age = age
         self.race = race
 
+
     def singing(self, sing = None):
         if sing is None:
             return f"{self.name}'Dont know any song :( "
@@ -29,6 +33,7 @@ class TownsFolk(Village):
 class Santa(TownsFolk):
     def __str__(self):
         return f"My name is {self.name}, i am {self.age} years old and i was a {self.race}"
+
 
 class ElfWorker(TownsFolk):
 
@@ -73,7 +78,15 @@ class Building:
     def __str__(self):
         return f"This building is {self.name}, and this is {self.type}"
 
-village = Village("Santa Claus City",100)
+class Whorehouse(Building):
+    def check_who_is_in_building():
+        print( f"Door is open, you see whores and {santa.name}" )
+
+
+
+
+
+village = Village("Santa Claus City",0)
 print(village)
 santa = Santa("Santa Claus",100,"Human")
 print(santa)
@@ -86,3 +99,8 @@ print(elfscientist)
 print(elfscientist.singing())
 print(elfscientist.crafting())
 print(santa.singing())
+
+
+whorehouse = Whorehouse("Candy Drop","Whorehouse")
+print(whorehouse)
+Whorehouse.check_who_is_in_building()
