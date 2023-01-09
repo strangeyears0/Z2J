@@ -156,24 +156,38 @@ import pathlib
 
 # exercises
 
-from pathlib import Path
+# from pathlib import Path
+#
+# new_dir = Path.home() / "my_folder"
+#
+#
+# file1 = new_dir / "file1.txt"
+# file2 = new_dir / "file2.txt"
+# image1 = new_dir / "image1.png"
+#
+# file1.touch()
+# file2.touch()
+# image1.touch()
+#
+# images_dir = new_dir /"images"
+# image1.replace(images_dir / "image1.png")
+#
+# file1.unlink()
+#
+# import shutil
+#
+# shutil.rmtree(new_dir)
 
-new_dir = Path.home() / "my_folder"
+# 12.4 Challenge
 
-
-file1 = new_dir / "file1.txt"
-file2 = new_dir / "file2.txt"
-image1 = new_dir / "image1.png"
-
-file1.touch()
-file2.touch()
-image1.touch()
-
-images_dir = new_dir /"images"
-image1.replace(images_dir / "image1.png")
-
-file1.unlink()
-
-import shutil
-
-shutil.rmtree(new_dir)
+# from pathlib import Path
+#
+#
+# documents_dir = Path.cwd() / "practice_files" / "documents"
+#
+# images_dir = Path.home() / "images"
+# images_dir.mkdir(exist_ok=True)
+#
+# for path in documents_dir.rglob("*.*"):
+#     if path.suffix.lower() in [".png", ".jpg", ".gif"]:
+#         path.replace(images_dir / path.name)
