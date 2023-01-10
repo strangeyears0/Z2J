@@ -181,13 +181,42 @@ import pathlib
 # 12.4 Challenge
 
 # from pathlib import Path
+# #
+# #
+# # documents_dir = Path.cwd() / "practice_files" / "documents"
+# #
+# # images_dir = Path.home() / "images"
+# # images_dir.mkdir(exist_ok=True)
+# #
+# # for path in documents_dir.rglob("*.*"):
+# #     if path.suffix.lower() in [".png", ".jpg", ".gif"]:
+# #         path.replace(images_dir / path.name)
+
+# 12..5 writing and reading file
+from pathlib import Path
+# path = Path.home() / "hello.txt"
+# path.touch()
+# file = path.open(mode = "r", encoding = "utf-8")
 #
+# print(file)
+# file.close()
+
+# file_path = "C:/Users/Ja/hello.txt"
 #
-# documents_dir = Path.cwd() / "practice_files" / "documents"
+# file = open(file_path, mode ="r", encoding="utf-8")
+# print(file)
+# file.close()
 #
-# images_dir = Path.home() / "images"
-# images_dir.mkdir(exist_ok=True)
-#
-# for path in documents_dir.rglob("*.*"):
-#     if path.suffix.lower() in [".png", ".jpg", ".gif"]:
-#         path.replace(images_dir / path.name)
+# with statemant
+
+from pathlib import Path
+path = Path.home() / "hello.txt"
+path.touch()
+file = path.open(mode = "r", encoding = "utf-8")
+
+# with path.open(mode = "r", encoding = "utf-8") as file:
+#     text= file.read()
+# print(text)
+with path.open(mode = "r", encoding = "utf-8") as file:
+    for line in file.readlines():
+        print(line, end = "")
