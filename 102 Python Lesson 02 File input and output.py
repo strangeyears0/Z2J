@@ -209,14 +209,80 @@ from pathlib import Path
 #
 # with statemant
 
-from pathlib import Path
-path = Path.home() / "hello.txt"
-path.touch()
-file = path.open(mode = "r", encoding = "utf-8")
-
+# from pathlib import Path
+# path = Path.home() / "hello.txt"
+# path.touch()
+# file = path.open(mode = "r", encoding = "utf-8")
+# #
+# # # with path.open(mode = "r", encoding = "utf-8") as file:
+# # #     text= file.read()
+# # # print(text)
+# # with path.open(mode = "r", encoding = "utf-8") as file:
+# #     for line in file.readlines():
+# #         print(line, end = "")
+#
+# #Writing file
+#
+#
+# with path.open(mode = "w", encoding = "utf-8") as file:
+#     file.write("Hi there!")
+#
 # with path.open(mode = "r", encoding = "utf-8") as file:
 #     text= file.read()
 # print(text)
-with path.open(mode = "r", encoding = "utf-8") as file:
-    for line in file.readlines():
-        print(line, end = "")
+#
+#
+# # append
+#
+# with path.open(mode = "a", encoding = "utf-8") as file:
+#     file.write("\nNext line")
+#
+#
+# with path.open(mode = "r", encoding = "utf-8") as file:
+#     text= file.read()
+# print(text)
+#
+# lines_of_text = ["Hello line1\n",
+#                  "Hello line2\n",
+#                  "Hello line3\n",
+#                  ]
+# with path.open(mode ="w", encoding= "utf-8") as file:
+#     file.writelines(lines_of_text)
+#
+# with path.open(mode = "r", encoding = "utf-8") as file:
+#     text= file.read()
+# print(text)
+#
+# path = Path.home() / "new_file.txt"
+# with path.open(mode = "w", encoding = "utf-8") as file:
+#     file.write("Hello")
+#
+# with path.open(mode = "r", encoding = "utf-8") as file:
+#     text= file.read()
+# print(text)
+#
+
+
+# ex1.
+
+from pathlib import Path
+
+starships = ["Discovery\n", "Enterprise\n","Defiant\n","Voyager"]
+
+file_path = Path.home() / "starships.txt"
+
+with file_path.open(mode="w", encoding="utf-8") as file:
+    file.writelines(starships)
+
+# ex2.
+
+with file_path.open(mode="r", encoding= "utf-8") as file:
+    for starships in file.readlines():
+        print(starships, end ="\n")
+
+# ex3.
+
+with file_path.open(mode = "r", encoding = "utf-8") as file:
+    for starship in file.readlines():
+        if starship.startswith("D"):
+            print(f"\n{starship}", end= "")
