@@ -1,5 +1,6 @@
 # Creating patho objects from strings
 #
+import csv
 import pathlib
 #
 # path = pathlib.Path("/Users/David/Documents/hello.txt")
@@ -265,24 +266,124 @@ from pathlib import Path
 
 # ex1.
 
+# from pathlib import Path
+#
+# starships = ["Discovery\n", "Enterprise\n","Defiant\n","Voyager"]
+#
+# file_path = Path.home() / "starships.txt"
+#
+# with file_path.open(mode="w", encoding="utf-8") as file:
+#     file.writelines(starships)
+#
+# # ex2.
+#
+# with file_path.open(mode="r", encoding= "utf-8") as file:
+#     for starships in file.readlines():
+#         print(starships, end ="\n")
+#
+# # ex3.
+#
+# with file_path.open(mode = "r", encoding = "utf-8") as file:
+#     for starship in file.readlines():
+#         if starship.startswith("D"):
+#             print(f"\n{starship}", end= "")
+
+# 12.6 READ AND WRITE CSV Data
+
+# temperature_readings = [68, 65, 68, 70, 74, 72]
+#
+# from pathlib import Path
+#
+# file_path = Path.home() / "temperatures.csv"
+#
+# with file_path.open(mode = "a" , encoding = "utf-8") as file:
+#     file.write(str(temperature_readings[0]))
+#     for temp in temperature_readings[1:]:
+#         file.write(f",{temp}")
+# with file_path.open(mode = "r", encoding = "utf-8") as file:
+#     text = file.read()
+# print(text)
+#
+# temperatures = text.split(",")
+# print(temperatures)
+#
+# int_temperatures = [int(temp) for temp in temperatures]
+# print(int_temperatures)
+#
+# from pathlib import Path
+# import csv
+# daily_temperatures = [
+#     [68, 65, 68, 70, 74, 72],
+#     [67, 67, 70, 72, 72, 70],
+#     [68, 70, 74, 76, 74, 73]
+# ]
+#
+# file_path = Path.home() / "temperatures.csv"
+# file = file_path.open(mode = "w", encoding = "utf-8", newline="")
+#
+# writer = csv.writer(file)
+#
+# for temp_list in daily_temperatures:
+#     writer.writerow(temp_list)
+# file.close()
+#
+# file = file_path.open(mode = "r", encoding = "utf-8", newline = "")
+# reader = csv.reader(file)
+#
+# for row in reader:
+#     print(row)
+# file.close()
+
+
+# exercise 1
+
+import csv
 from pathlib import Path
 
-starships = ["Discovery\n", "Enterprise\n","Defiant\n","Voyager"]
+# numbers = [
+#     [1,2,3,4,5],
+#     [6,7,8,9,10],
+#     [11,12,13,14,15],
+# ]
+#
+# file_path = Path.home() / "numbers.csv"
+#
+# with file_path.open(mode = "w", encoding= "utf-8") as file:
+#     writer = csv.writer(file)
+#     writer.writerows(numbers)
+#
+# # ex2/
+#
+# numbers = []
+#
+# with file_path.open(mode="r", encoding="utf-8") as file:
+#     reader = csv.reader(file)
+#     for row in reader:
+#         int_row = [int(num) for num in row]
+#         numbers.append(int_row)
+# print(numbers)
 
-file_path = Path.home() / "starships.txt"
+# ex3
 
-with file_path.open(mode="w", encoding="utf-8") as file:
-    file.writelines(starships)
+favorite_colors = [
+    {"name":"Joe","favorite_color":"blue"},
+    {"name":"Anne","favorite_color":"green"},
+    {"name":"Bailey","favorite_color":"red"},
+]
 
-# ex2.
+file_path = Path.home() / "favorite_colors.csv"
 
-with file_path.open(mode="r", encoding= "utf-8") as file:
-    for starships in file.readlines():
-        print(starships, end ="\n")
+with file_path.open(mode = "w",encoding = "utf-8") as file:
+    writer = csv.DictWriter(file, fieldnames=["name","favorite_color"])
+    writer.writeheader()
+    writer.writerows(favorite_colors)
 
-# ex3.
+# ex4
+
+favorite_colors = []
 
 with file_path.open(mode = "r", encoding = "utf-8") as file:
-    for starship in file.readlines():
-        if starship.startswith("D"):
-            print(f"\n{starship}", end= "")
+    reader = csv.DictReader(file)
+    for row in reader:
+        favorite_colors.append(row)
+print(favorite_colors)
