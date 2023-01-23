@@ -115,6 +115,10 @@ def action_2():
     elif choice == 'b':
         print("You go back")
         return describe_room1(), action()
+    else:
+        print("Bad choice! Type h if you wanna help")
+        return action_2()
+
 
 
 def action():
@@ -244,7 +248,9 @@ def action_3_accept():
     elif choice == 'b':
         print("You go back")
         return describe_room1(), action()
-
+    else:
+        print("Bad choice! Type h if you wanna help")
+        return action_3_accept()
 
 help()
 describe_room1()
