@@ -171,41 +171,266 @@ from pathlib import Path
 
 # 14.3 Challange PDFFILESPLITTER CLASS
 
+# from pathlib import Path
+#
+# from PyPDF2 import PdfFileReader, PdfFileWriter
+#
+# class PdfFileSplitter:
+#     """Class for splitting a pdf into two files."""
+#
+#     def __init__(self, pdf_path):
+#         "Open the PDF file with a new PdfFileReader instance"
+#         self.pdf_reader = PdfFileReader(pdf_path)
+#
+#         self.writer1 = None
+#         self.writer2 = None
+#
+#     def split(self,breakpoint):
+#         """Split the Pdf Into two PdfFileWriter"""
+#
+#         self.writer1 = PdfFileWriter()
+#         self.writer2 = PdfFileWriter()
+#
+#         for page in self.pdf_reader.pages[:breakpoint]:
+#             self.writer1.addPage(page)
+#         for page in self.pdf_reader.pages[breakpoint:]:
+#             self.writer2.addPage(page)
+#
+#     def write(self, filename):
+#         """Write both PdfFileWriter instance to files"""
+#
+#         with Path(filename + "_1.pdf").open(mode="wb") as output_file:
+#             self.writer1.write(output_file)
+#
+#         with Path(filename + "_2.pdf").open(mode="wb") as output_file:
+#             self.writer2.write(output_file)
+#
+#
+# pdf_splitter = PdfFileSplitter("Pride_and_Prejudice.pdf")
+# pdf_splitter.split(breakpoint=150)
+# pdf_splitter.write("pride_split")
+
+
+# 14.4 Concatenanting and Merging PDFs
+
+# from PyPDF2 import PdfFileMerger
+# from pathlib import Path
+# reports_dir = (Path.home()/
+#             "Expense_reports"
+#                 )
+#
+# pdf_merger = PdfFileMerger()
+# for path in reports_dir.glob("*.pdf"):
+#     print(path.name)
+# expense_reports = list(reports_dir.glob("*.pdf"))
+# expense_reports.sort()
+#
+# for path in expense_reports:
+#     print(path.name)
+#
+# for path in expense_reports:
+#     pdf_merger.append(str(path))
+# with Path("expense_reports.pdf").open(mode = "wb") as output_file:
+#     pdf_merger.write(output_file)
+
+# exercise1
+
+#
+# from pathlib import Path
+#
+#
+# from PyPDF2 import PdfFileMerger
+#
+# BASE_BATH = Path.home()/ "practice_files"
+#
+# pdf_paths= [BASE_BATH/"merge1.pdf", BASE_BATH / "merge2.pdf"]
+# pdf_merger = PdfFileMerger()
+#
+# for path in pdf_paths:
+#     pdf_merger.append(str(path))
+#
+# output_path = Path.home() / "concatenated.pdf"
+# with output_path.open(mode="wb") as output_file:
+#     pdf_merger.write(output_file)
+#
+# #
+# # exercise2
+# pdf_merger = PdfFileMerger()
+# pdf_merger.append(str(output_path))
+#
+# pdf_path = BASE_BATH / "merge3.pdf"
+# pdf_merger.merge(1,str(pdf_path))
+#
+# output_path = Path.home() / "merged.pdf"
+# with output_path.open(mode = "wb") as output_file:
+#     pdf_merger.write(output_file)
+#
+# from pathlib import Path
+# from PyPDF2 import PdfFileReader,PdfFileWriter
+#
+# pdf_path = Path.home() / "ugly.pdf"
+#
+# pdf_reader = PdfFileReader(str(pdf_path))
+# pdf_writer = PdfFileWriter()
+#
+# for n in range(pdf_reader.getNumPages()):
+#     page = pdf_reader.getPage(n)
+#     if n % 2 == 0:
+#         page.rotateClockwise(90)
+#     pdf_writer.addPage(page)
+#
+# with Path("ugly_rotated.pdf").open(mode = "wb") as output_file:
+#     pdf_writer.write(output_file)
+#
+# page=pdf_reader.getPage(0)
+# print(page["/Rotate"])
+# page.rotateClockwise(90)
+# print(page["/Rotate"])
+
+# Cropping Pages
+#
+# from pathlib import Path
+# from PyPDF2 import PdfFileReader,PdfFileWriter
+#
+# pdf_path= (
+#     Path.home()/"half_and_half.pdf"
+# )
+#
+# pdf_reader = PdfFileReader(str(pdf_path))
+# first_page = pdf_reader.getPage(0)
+#
+# print(first_page.mediaBox)
+# print(first_page.mediaBox.lowerLeft)
+# print(first_page.mediaBox.lowerRight)
+# print(first_page.mediaBox.upperLeft)
+# print(first_page.mediaBox.upperRight)
+# print(first_page.mediaBox.upperRight[0])
+# print(first_page.mediaBox.upperRight[1])
+# first_page.mediaBox.upperLeft=(0,480)
+# print(first_page.mediaBox.upperLeft)
+# print(first_page.mediaBox.upperRight)
+#
+# pdf_writer = PdfFileWriter()
+# pdf_writer.addPage(first_page)
+# with Path("cropped_page.pdf").open(mode= "wb") as output_file:
+#     pdf_writer.write(output_file)
+#
+# pdf_reader = PdfFileReader(str(pdf_path))
+# pdf_writer = PdfFileWriter()
+#
+# first_page =  pdf_reader.getPage(0)
+#
+# import copy
+# left_side = copy.deepcopy(first_page)
+#
+# current_coords = left_side.mediaBox.upperRight
+#
+# new_coords = (current_coords[0]/2,current_coords[1])
+#
+# left_side.mediaBox.upperRight = new_coords
+#
+# right_side=  copy.deepcopy(first_page)
+# right_side.mediaBox.upperLeft = new_coords
+#
+# pdf_writer.addPage(left_side)
+# pdf_writer.addPage(right_side)
+#
+# with Path("cropped_pages.pdf").open(mode="wb") as output_file:
+#     pdf_writer.write(output_file)
+
+
+
+# ex1
+
+# from pathlib import Path
+#
+# from PyPDF2 import PdfFileWriter,PdfFileReader
+#
+# pdf_path = (Path.home()/
+#             "split_and_rotate.pdf")
+# pdf_reader = PdfFileReader(str(pdf_path))
+# pdf_writer = PdfFileWriter()
+#
+# for page in pdf_reader.pages:
+#     rotated_page = page.rotateCounterClockwise(90)
+#     pdf_writer.addPage(rotated_page)
+#
+# output_path = Path.home() / "rotated.pdf"
+# with output_path.open(mode="wb") as output_file:
+#     pdf_writer.write(output_file)
+
+# ex2
+# import copy
+#
+# pdf_path = Path.home()/"rotated.pdf"
+#
+# pdf_reader = PdfFileReader(str(pdf_path))
+# pdf_writer = PdfFileWriter()
+#
+# for page in pdf_reader.pages:
+#     upper_right_coords = page.mediaBox.upperRight
+#     center_coords = (upper_right_coords[0] / 2, upper_right_coords[1])
+#
+#     left_page = copy.deepcopy(page)
+#     right_page = copy.deepcopy(page)
+#
+#     left_page.mediaBox.upperRight = center_coords
+#     right_page.mediaBox.upperLeft = center_coords
+#
+#     pdf_writer.addPage(left_page)
+#     pdf_writer.addPage(right_page)
+#
+# output_path = Path.home() / "split.pdf"
+#
+# with output_path.open(mode = "wb") as output_file:
+#     pdf_writer.write(output_file)
+
+# 14.6 Encrypting and Decrypying pdfs
+#
+# from pathlib import Path
+# from PyPDF2 import PdfFileReader,PdfFileWriter
+#
+# pdf_path = (Path.home()/"newsletter.pdf")
+#
+# pdf_reader = PdfFileReader(str(pdf_path))
+# pdf_writer = PdfFileWriter()
+# pdf_writer.appendPagesFromReader(pdf_reader)
+#
+# pdf_writer.encrypt(user_password="SuperSecret")
+#
+# output_path = Path.home()/"newsletter_protected.pdf"
+# with output_path.open(mode="wb") as output_file:
+#     pdf_writer.write(output_file)
+
+# from pathlib import Path
+# from PyPDF2 import PdfFileWriter, PdfFileReader
+#
+# pdf_path = Path.home() / "newsletter_protected.pdf"
+# pdf_reader = PdfFileReader(str(pdf_path))
+# pdf_reader.decrypt(password="SuperSecret")
+# print(pdf_reader.getPage(0))
+
+# ex1
+
 from pathlib import Path
-
 from PyPDF2 import PdfFileReader, PdfFileWriter
+#
+# pdf_path = Path.home()/"top_secret.pdf"
+# pdf_reader= PdfFileReader(str(pdf_path))
+# pdf_writer = PdfFileWriter()
+# pdf_writer.appendPagesFromReader(pdf_reader)
+# pdf_writer.encrypt(user_password="Unguessable")
+#
+# output_path = Path.home()/"top_secret_encrypted.pdf"
+# with output_path.open(mode = "wb") as output_file:
+#     pdf_writer.write(output_file)
 
-class PdfFileSplitter:
-    """Class for splitting a pdf into two files."""
+# ex2
 
-    def __init__(self, pdf_path):
-        "Open the PDF file with a new PdfFileReader instance"
-        self.pdf_reader = PdfFileReader(pdf_path)
+pdf_path = Path.home() / "top_secret_encrypted.pdf"
+pdf_reader = PdfFileReader(str(pdf_path))
 
-        self.writer1 = None
-        self.writer2 = None
+pdf_reader.decrypt("Unguessable")
 
-    def split(self,breakpoint):
-        """Split the Pdf Into two PdfFileWriter"""
-
-        self.writer1 = PdfFileWriter()
-        self.writer2 = PdfFileWriter()
-
-        for page in self.pdf_reader.pages[:breakpoint]:
-            self.writer1.addPage(page)
-        for page in self.pdf_reader.pages[breakpoint:]:
-            self.writer2.addPage(page)
-
-    def write(self, filename):
-        """Write both PdfFileWriter instance to files"""
-
-        with Path(filename + "_1.pdf").open(mode="wb") as output_file:
-            self.writer1.write(output_file)
-
-        with Path(filename + "_2.pdf").open(mode="wb") as output_file:
-            self.writer2.write(output_file)
-
-
-pdf_splitter = PdfFileSplitter("Pride_and_Prejudice.pdf")
-pdf_splitter.split(breakpoint=150)
-pdf_splitter.write("pride_split")
+first_page = pdf_reader.getPage(0)
+print(first_page.extractText())
