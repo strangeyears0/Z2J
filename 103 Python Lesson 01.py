@@ -436,26 +436,56 @@ from pathlib import Path
 # print(first_page.extractText())
 
 # 14.7 Challenge Unscramble a PDF
+#
+# from pathlib import Path
+# from PyPDF2 import PdfFileReader, PdfFileWriter
+#
+# def get_page_text(page):
+#     return page.extractText()
+#
+# pdf_path = Path.home()/"scrambled.pdf"
+#
+# pdf_reader = PdfFileReader(str(pdf_path))
+# pdf_writer = PdfFileWriter()
+#
+# pages = list(pdf_reader.pages)
+# pages.sort(key=get_page_text)
+#
+# for page in pages:
+#     rotation_degrees = page["/Rotate"]
+#     if rotation_degrees != 0:
+#         page.rotateCounterClockwise(rotation_degrees)
+#     pdf_writer.addPage(page)
+# output_path = Path.home()/"unscrambled.pdf"
+# with output_path.open(mode = "wb") as output_file:
+#     pdf_writer.write(output_file)
 
-from pathlib import Path
-from PyPDF2 import PdfFileReader, PdfFileWriter
+# 14.8 CREATING PDF FROM SCRATCH
 
-def get_page_text(page):
-    return page.extractText()
+# from reportlab.pdfgen.canvas import Canvas
+# from reportlab.lib.units import inch,cm
+# from reportlab.lib.pagesizes import LETTER
+#
+#
+# # canvas = Canvas("hello.pdf")
+# # canvas = Canvas('hello.pdf',pagesize=LETTER)
+# # canvas.drawString(72,72,"Hello, World")
+# # canvas.save()
+# #
+# canvas = Canvas("font-example.pdf",pagesize=LETTER)
+# canvas.setFont("Times-Roman",18)
+# canvas.drawString(1*inch,10*inch,"Times New Roman (18pt)")
+# canvas.save()
 
-pdf_path = Path.home()/"scrambled.pdf"
-
-pdf_reader = PdfFileReader(str(pdf_path))
-pdf_writer = PdfFileWriter()
-
-pages = list(pdf_reader.pages)
-pages.sort(key=get_page_text)
-
-for page in pages:
-    rotation_degrees = page["/Rotate"]
-    if rotation_degrees != 0:
-        page.rotateCounterClockwise(rotation_degrees)
-    pdf_writer.addPage(page)
-output_path = Path.home()/"unscrambled.pdf"
-with output_path.open(mode = "wb") as output_file:
-    pdf_writer.write(output_file)
+# from reportlab.lib.colors import blue
+# from reportlab.lib.pagesizes import LETTER
+# from reportlab.lib.units import inch
+# from reportlab.pdfgen.canvas import Canvas
+#
+# canvas = Canvas("font-colors.pdf", pagesize = LETTER)
+#
+# canvas.setFont("Times-Roman",42)
+#
+# canvas.setFillColor("blue")
+# canvas.drawString(1*inch,10*inch,"Blue Text")
+# canvas.save()
