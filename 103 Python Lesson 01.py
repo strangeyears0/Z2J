@@ -412,8 +412,8 @@ from pathlib import Path
 
 # ex1
 
-from pathlib import Path
-from PyPDF2 import PdfFileReader, PdfFileWriter
+# from pathlib import Path
+# from PyPDF2 import PdfFileReader, PdfFileWriter
 #
 # pdf_path = Path.home()/"top_secret.pdf"
 # pdf_reader= PdfFileReader(str(pdf_path))
@@ -426,11 +426,36 @@ from PyPDF2 import PdfFileReader, PdfFileWriter
 #     pdf_writer.write(output_file)
 
 # ex2
+#
+# pdf_path = Path.home() / "top_secret_encrypted.pdf"
+# pdf_reader = PdfFileReader(str(pdf_path))
+#
+# pdf_reader.decrypt("Unguessable")
+#
+# first_page = pdf_reader.getPage(0)
+# print(first_page.extractText())
 
-pdf_path = Path.home() / "top_secret_encrypted.pdf"
+# 14.7 Challenge Unscramble a PDF
+
+from pathlib import Path
+from PyPDF2 import PdfFileReader, PdfFileWriter
+
+def get_page_text(page):
+    return page.extractText()
+
+pdf_path = Path.home()/"scrambled.pdf"
+
 pdf_reader = PdfFileReader(str(pdf_path))
+pdf_writer = PdfFileWriter()
 
-pdf_reader.decrypt("Unguessable")
+pages = list(pdf_reader.pages)
+pages.sort(key=get_page_text)
 
-first_page = pdf_reader.getPage(0)
-print(first_page.extractText())
+for page in pages:
+    rotation_degrees = page["/Rotate"]
+    if rotation_degrees != 0:
+        page.rotateCounterClockwise(rotation_degrees)
+    pdf_writer.addPage(page)
+output_path = Path.home()/"unscrambled.pdf"
+with output_path.open(mode = "wb") as output_file:
+    pdf_writer.write(output_file)
