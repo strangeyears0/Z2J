@@ -1,93 +1,58 @@
 import random
 import copy
 
-square = []
+board_square = ['-','-','-',
+                '-','-','-',
+                '-','-','-',]
 
+full_board = [[],[],[],
+            [],[],[],
+            [],[],[],]
 
-def square_generator():
-    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+num = ['1','2','3','4','5','6','7','8','9']
 
-    for p in range(9):
-        copy_numbers = copy.deepcopy(numbers)
-        grid = [[0 for x in range(3)] for y in range(3)]
-        i = 0
-        j = 0
-
-
-        for o in numbers:
-            random_number = random.choice(copy_numbers)
-            if random_number in copy_numbers:
-                copy_numbers.remove(random_number)
-            grid[i][j]=random_number
-            i = i +1
-            if i == 3:
-                j =j +1
-                i = 0
-        square.append(grid)
-    print(square)
+def square_filling():
+    for square in range(9):
+        available_num = copy.deepcopy(num)
+        board_square_copy = copy.deepcopy(board_square)
+        for n in range(9):
+            board_square_copy[n] = random.choice(available_num)
+            available_num.remove(board_square_copy[n])
+        full_board[square] = board_square_copy
 def display_board():
-    row=[]
     i = 0
     j = 0
-    for element in square:
-        row.append(element[i][j])
-    i = 0
-    j= 1
-    for element in square:
-        row.append(element[i][j])
-    i = 0
-    j= 2
-    for element in square:
-        row.append(element[i][j])
-
-    print(row)
-
-
-
-
+    for w in range(3):
+        for x in  range(3):
+            row_list = []
+            for y in range(3):
+                if y == 0:
+                    i = 3 * w
+                    j = x * 3
+                for z in range(3):
+                    row_list.append(full_board[i][j])
+                    j = j + 1
+                i = i + 1
+                j = j - 3
+            row = ' | '.join(row_list)
+            print( row )
 
 
 
-square_generator()
-display_board()
+square_filling()
+print(board_square)
+print(full_board)
+print(display_board())
 
-    # def generate_sudoku():
+
+
+
 #
-#     grid = [[0 for x in range(3)] for y in range(3)]
-#     i = 0
-#     j = 0
-#
-#     for x in numbers:
-#
-#         random_number = random.choice(copy_numbers)
-#
-#         grid[i][j]=random_number
-#
-#         i= i + 1
-#         if i == 3:
-#             j = j + 1
-#             i = 0
-#
-#
-#         if random_number in copy_numbers:
-#             copy_numbers.remove(random_number)
-#
-#
-#
-#         # big_square.append(grid)
-#         # for row in grid:
-#         #     print(row)
-#         # for square in big_square:
-#         #     print(square)
-#
-#     copy_grid = grid.copy()
-#     square.append(copy_grid)
-#     copy.deepcopy(numbers)
-#
-# generate_sudoku()
-#
-#
-# for element in square:
-#     print(element)
+
+
+
+
+
+
 
 
