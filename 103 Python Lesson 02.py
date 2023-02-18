@@ -1,4 +1,4 @@
-import sqlite3
+# import sqlite3
 # connection = sqlite3.connect("test_database.db")
 # print(type(connection))
 #
@@ -26,29 +26,68 @@ import sqlite3
 
 #WORKING WITH DATABASE TABLES
 
-create_table = """
+# create_table = """
+# CREATE TABLE People(
+#     FirstName TEXT,
+#     LastName TEXT,
+#     Age INT
+#     );"""
+# insert_values ="""
+# INSERT INTO People VALUES(
+#     'Ron',
+#     'Obvious',
+#     42
+# );"""
+#
+# connection = sqlite3.connect("test_database.db")
+# cursor = connection.cursor()
+# # cursor.execute(create_table)
+# cursor.execute(insert_values)
+# connection.commit()
+# connection.close()
+#
+# connection = sqlite3.connect("test_database.db")
+# cursor = connection.cursor()
+# query = "SELECT * FROM People;"
+# results = cursor.execute(query)
+# fetch = results.fetchone()
+# print(fetch)
+
+
+
+# create_table = """
+# CREATE TABLE People(
+#     FirstName TEXT,
+#     LastName TEXT,
+#     Age INT
+#     );"""
+# insert_values ="""
+# INSERT INTO People VALUES(
+#     'Ron',
+#     'Obvious',
+#     42
+# );"""
+#
+# with sqlite3.connect("test_database.db") as connection:
+#     cursor = connection.cursor()
+#     # cursor.execute(create_table)
+#     cursor.execute(insert_values)
+
+
+import sqlite3
+sql = """
+DROP TABLE IF EXISTS People;
 CREATE TABLE People(
     FirstName TEXT,
     LastName TEXT,
     Age INT
-    );"""
-insert_values ="""
+);
 INSERT INTO People VALUES(
     'Ron',
     'Obvious',
-    42
+    '42'
 );"""
 
-connection = sqlite3.connect("test_database.db")
-cursor = connection.cursor()
-# cursor.execute(create_table)
-cursor.execute(insert_values)
-connection.commit()
-connection.close()
-
-connection = sqlite3.connect("test_database.db")
-cursor = connection.cursor()
-query = "SELECT * FROM People;"
-results = cursor.execute(query)
-fetch = results.fetchone()
-print(fetch)
+with sqlite3.connect("test_database.db") as connection:
+    cursor = connection.cursor()
+    cursor.executescript(sql)
