@@ -139,27 +139,30 @@
 #Review EXERCISES
 
 #1
-import sqlite3
+# import sqlite3
+#
+# with sqlite3.connect(":memory:") as connection:
+#     c = connection.cursor()
+#
+#     c.execute("CREATE TABLE Roster(Name TEXT, Species TEXT, Age INT)")
+#
+#     #2
+#     roster_data = (
+#         ("Benjamin Sisko", "Human", 40),
+#         ("Jadzia Dax", "Trill", 300),
+#         ("Kira Nerys", "Bajoran", 29),
+#     )
+#     c.executemany("INSERT INTO Roster VALUES(?,?,?)",roster_data)
+#
+#     #3
+#     c.execute(
+#         "UPDATE Roster SET Name=? WHERE Name=?",("Ezri Dax", "Jadzia Dax")
+#     )
+#
+#     #4
+#     c.execute("SELECT Name, Age FROM Roster WHERE Species = 'Trill'")
+#     for row in c.fetchall():
+#         print(row)
 
-with sqlite3.connect(":memory:") as connection:
-    c = connection.cursor()
+#15.2 Libaries For Working With Other SQL Databases
 
-    c.execute("CREATE TABLE Roster(Name TEXT, Species TEXT, Age INT)")
-
-    #2
-    roster_data = (
-        ("Benjamin Sisko", "Human", 40),
-        ("Jadzia Dax", "Trill", 300),
-        ("Kira Nerys", "Bajoran", 29),
-    )
-    c.executemany("INSERT INTO Roster VALUES(?,?,?)",roster_data)
-
-    #3
-    c.execute(
-        "UPDATE Roster SET Name=? WHERE Name=?",("Ezri Dax", "Jadzia Dax")
-    )
-
-    #4
-    c.execute("SELECT Name, Age FROM Roster WHERE Species = 'Trill'")
-    for row in c.fetchall():
-        print(row)
