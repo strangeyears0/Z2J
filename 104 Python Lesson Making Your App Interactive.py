@@ -32,25 +32,53 @@
 #
 # window.mainloop()
 
+# import tkinter as tk
+#
+# window = tk.Tk()
+#
+# def handle_keypress(event):
+#     """Print the character associated to the key pressed"""
+#     print(event.char)
+#
+# # Bind keypress event to handle_keypress()
+# window.bind("<Key>", handle_keypress)
+#
+#
+#
+# def handle_click(event):
+#     print("The button was clicked!")
+#
+# button = tk.Button(text="Click me!")
+# button.pack()
+#
+# button.bind("<Button-1>", handle_click)
+#
+# window.mainloop()
+
+
 import tkinter as tk
+
+def incrase():
+    value = int(lbl_value["text"])
+    lbl_value["text"]=f"{value+1}"
+
+
+def decrase():
+    value = int(lbl_value["text"])
+    lbl_value["text"]=f"{value-1}"
 
 window = tk.Tk()
 
-def handle_keypress(event):
-    """Print the character associated to the key pressed"""
-    print(event.char)
+window.rowconfigure(0,minsize=50, weight=1)
+window.columnconfigure([0,1,2],minsize=50,weight=1)
 
-# Bind keypress event to handle_keypress()
-window.bind("<Key>", handle_keypress)
+btn_decrase = tk.Button(master=window, text ="-",command=decrase)
+btn_decrase.grid(row=0,column=0,sticky="nsew")
 
+lbl_value=tk.Label(master=window,text="0")
+lbl_value.grid(row=0,column=1)
 
-
-def handle_click(event):
-    print("The button was clicked!")
-
-button = tk.Button(text="Click me!")
-button.pack()
-
-button.bind("<Button-1>", handle_click)
+btn_incrase = tk.Button(master=window,text="+",command=incrase)
+btn_incrase.grid(row=0,column=2,sticky="nsew")
 
 window.mainloop()
