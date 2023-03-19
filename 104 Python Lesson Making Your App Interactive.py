@@ -56,29 +56,62 @@
 # window.mainloop()
 
 
+# import tkinter as tk
+#
+# def incrase():
+#     value = int(lbl_value["text"])
+#     lbl_value["text"]=f"{value+1}"
+#
+#
+# def decrase():
+#     value = int(lbl_value["text"])
+#     lbl_value["text"]=f"{value-1}"
+#
+# window = tk.Tk()
+#
+# window.rowconfigure(0,minsize=50, weight=1)
+# window.columnconfigure([0,1,2],minsize=50,weight=1)
+#
+# btn_decrase = tk.Button(master=window, text ="-",command=decrase)
+# btn_decrase.grid(row=0,column=0,sticky="nsew")
+#
+# lbl_value=tk.Label(master=window,text="0")
+# lbl_value.grid(row=0,column=1)
+#
+# btn_incrase = tk.Button(master=window,text="+",command=incrase)
+# btn_incrase.grid(row=0,column=2,sticky="nsew")
+#
+# window.mainloop()
+
+# ex.1
+# import random
+# import tkinter as tk
+#
+# def bg_color():
+#     color = random.choice(["red","orange","yellow","green","indigo","violet"])
+#     button["bg"] = color
+# window = tk.Tk()
+#
+# button=tk.Button(master=window,text="Click Me",command=bg_color)
+# button.pack()
+# window.mainloop()
+
+# ex2
+
+import random
 import tkinter as tk
 
-def incrase():
-    value = int(lbl_value["text"])
-    lbl_value["text"]=f"{value+1}"
+def roll():
+    lbl_result["text"] = str(random.randint(1,6))
 
+window= tk.Tk()
+window.columnconfigure(0,minsize=150)
+window.rowconfigure([0,1],minsize=50)
 
-def decrase():
-    value = int(lbl_value["text"])
-    lbl_value["text"]=f"{value-1}"
+btn_roll = tk.Button(text="Roll", command=roll)
+lbl_result=tk.Label()
 
-window = tk.Tk()
-
-window.rowconfigure(0,minsize=50, weight=1)
-window.columnconfigure([0,1,2],minsize=50,weight=1)
-
-btn_decrase = tk.Button(master=window, text ="-",command=decrase)
-btn_decrase.grid(row=0,column=0,sticky="nsew")
-
-lbl_value=tk.Label(master=window,text="0")
-lbl_value.grid(row=0,column=1)
-
-btn_incrase = tk.Button(master=window,text="+",command=incrase)
-btn_incrase.grid(row=0,column=2,sticky="nsew")
+btn_roll.grid(row=0,column=0,sticky="nsew")
+lbl_result.grid(row=1,column=0)
 
 window.mainloop()
